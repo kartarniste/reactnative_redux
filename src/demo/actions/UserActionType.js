@@ -14,15 +14,17 @@ export const getUserAddress = (address)=>{
     }
 }
 
-export const addText=(text)=>{
-  return{
-    type : ADD_TEXT,
-    payload : text
-  }
+export const addText=(text)=>dispatch=>{
+    dispatch({
+      type : ADD_TEXT,
+      payload : text
+    })
 }
 
-export const addTODO=()=>{
-  return{
-    type : ADD_TODO,
-  }
+export const addTODO=()=>dispatch=>{
+  setTimeout(()=>{
+    dispatch({
+      type : ADD_TODO,
+    })
+  },600)
 }

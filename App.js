@@ -42,14 +42,14 @@ import reducers from './src/demo/reducers';
 import ToDo from "./src/demo/containers/ToDo";
 import UserInfo from "./src/demo/containers/UserInfo";
 
-// const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
+const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
 // const reducer = combineReducers(reducers);
 // const store = createStoreWithMiddleware(
 //   reducers,
 //   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 // );
 
-const store = createStore(
+const store = createStoreWithMiddleware(
    reducers,
    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
