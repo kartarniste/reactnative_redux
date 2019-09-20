@@ -1,7 +1,7 @@
 import React from 'react';
 import { TextInput, Button, View, Text, Alert } from 'react-native';
 
-const ToDoComponent =({userName, userAddress, onChangeText, value, addToDoPress, todoList})=>{
+export default ToDoComponent =({userName, userAddress, onChangeText, value, addToDoPress, todoList})=>{
   return(
     <View style={{ padding:20, flex:1 }}>
         <View style={{ flexDirection:"row", justifyContent:'space-between'}}>
@@ -18,7 +18,7 @@ const ToDoComponent =({userName, userAddress, onChangeText, value, addToDoPress,
       </View>
       <View>
       {
-        todoList.map((text)=>{
+        todoList && todoList.map((text)=>{
           return(
             <View style={{borderColor:"#43AA8B", marginVertical:5, borderWidth:1}}>
               <Text style={{padding:5}}>{text}</Text>
@@ -35,5 +35,3 @@ const ToDoComponent =({userName, userAddress, onChangeText, value, addToDoPress,
     </View>
   );
 }
-
-export default ToDoComponent;
